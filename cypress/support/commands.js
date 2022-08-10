@@ -44,3 +44,27 @@ Cypress.Commands.add('cadastro', (nome, email, senha, senha2) => {
 
 
  })
+
+ Cypress.Commands.add('perfis', (status, empresa, website, local, conhec, userGit, bio) => { 
+   
+   cy.get('#mui-component-select-status').click();
+   cy.get('[data-test="status-' +status +'"]').click();
+   cy.get('[data-test="profile-company"] > .MuiInputBase-root > .MuiInputBase-input').type(empresa)
+   cy.get('[data-test="profile-webSite"] > .MuiInputBase-root > .MuiInputBase-input').type(website)
+   cy.get('[data-test="profile-location"] > .MuiInputBase-root > .MuiInputBase-input').type(local)
+   cy.get('[data-test="profile-skills"] > .MuiInputBase-root > .MuiInputBase-input').type(conhec)
+   cy.get('[data-test="profile-gitHub"] > .MuiInputBase-root > .MuiInputBase-input').type(userGit)
+   cy.get('[data-test="profile-bio"] > .MuiInputBase-root').type(bio)
+
+})
+
+Cypress.Commands.add('redes', (twitter, face, youtube, linkedin, insta, medium) => { 
+
+   cy.get('[data-test="profile-twitter"] > .MuiInputBase-root > .MuiInputBase-input').type(twitter)
+   cy.get('[data-test="profile-facebook"] > .MuiInputBase-root > .MuiInputBase-input').type(face)
+   cy.get('[data-test="profile-youtube"] > .MuiInputBase-root > .MuiInputBase-input').type(youtube)
+   cy.get('[data-test="profile-linkedin"] > .MuiInputBase-root > .MuiInputBase-input').type(linkedin)
+   cy.get('[data-test="profile-instagram"] > .MuiInputBase-root > .MuiInputBase-input').type(insta)
+   cy.get('[data-test="profile-medium"] > .MuiInputBase-root > .MuiInputBase-input').type(medium)
+
+})

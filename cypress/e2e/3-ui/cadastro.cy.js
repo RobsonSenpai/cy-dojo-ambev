@@ -45,14 +45,3 @@ beforeEach(() => {
 
 
 });
-
-/* 
-Funcionalidade: Cadastro
-
-Cenário: Cadastro com Sucesso
-
-Cenário: Cadastro com Pessoa Jurifica
-
-Cenário: Cadastro com Email inválido
-
-*/
