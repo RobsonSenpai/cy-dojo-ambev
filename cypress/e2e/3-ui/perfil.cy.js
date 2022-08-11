@@ -5,7 +5,6 @@ import usuarios from "../../fixtures/usuarios.json"
 
 describe('Funcionalidade: Login', () => {
     
-   
     it('Realiza Login', () => {
         cy.visit('login')
         cy.fixture('usuarios').then((user) => {
