@@ -68,3 +68,17 @@ Cypress.Commands.add('redes', (twitter, face, youtube, linkedin, insta, medium) 
    cy.get('[data-test="profile-medium"] > .MuiInputBase-root > .MuiInputBase-input').type(medium)
 
 })
+
+Cypress.Commands.add('gerarToken', (email, senha) => {
+   cy.request({
+      method: 'POST',
+      url: 'api/auth',
+      body: {
+         "email": email,
+         "password": senha
+      }
+      
+   }).then((response) => {
+      return response.jwt
+   })
+})
